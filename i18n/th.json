@@ -1,0 +1,18 @@
+{
+    "navigation": {
+      "home": "หน้าแรก",
+      "about": "เกี่ยวกับฉัน",
+      "projects": "ผลงาน",
+      "experience": "ประสบการณ์",
+      "contact": "ติดต่อ"
+    },
+    "hero": {
+      "badge": "พร้อมสำหรับโอกาสใหม่ๆ",
+      "greeting": "สวัสดีครับ",
+      "name": "ผมศรัญภัทร แสงปัก",
+      "role": "Senior Full-Stack Engineer",
+      "description": "ผู้เชี่ยวชาญด้านการพัฒนาเว็บไซต์และระบบดิจิทัลคุณภาพสูง",
+      "viewProjects": "ดูผลงาน",
+      "contactMe": "ติดต่อฉัน"
+    }
+  }
