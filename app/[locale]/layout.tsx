@@ -1,8 +1,11 @@
 import { Kanit } from "next/font/google";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { I18nProvider } from "@/components/providers/i18n-provider";
+import { getMessages } from "@/i18n/load-messages";
+import { isAppLocale, type AppLocale } from "@/i18n/config";
 import "@/app/globals.css";
 
 const kanit = Kanit({
@@ -11,16 +14,19 @@ const kanit = Kanit({
   variable: "--font-kanit",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "Sarunpat | Full-Stack Dev",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Sarunpat Sangpak",
+    template: "%s | Sarunpat",
+  },
   description:
-    "Portfolio of an experienced full-stack developer specializing in Next.js, React, and TypeScript.",
+    "Portfolio of an experienced developer specializing in Next.js, React, and TypeScript.",
   openGraph: {
     type: "website",
-    url: "https://yourdomain.com",
-    title: "Sarunpat | Full-Stack Dev",
-    description: "Portfolio of an experienced full-stack developer...",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    siteName: "Sarunpat Sangpak",
   },
 };
 
@@ -31,19 +37,25 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: paramLocale } = await params;
+  const locale: AppLocale = isAppLocale(paramLocale) ? paramLocale : "en";
+  const messages = await getMessages(locale);
+  const htmlLang = locale === "th" ? "th" : "en";
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={htmlLang} suppressHydrationWarning>
       <body
-        className={`${kanit.variable} font-sans antialiased bg-background text-foreground`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar locale={locale} />
-          <main className="min-h-screen pt-24 pb-12 px-6 max-w-7xl mx-auto">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+        className={`${kanit.variable} font-sans antialiased bg-background text-foreground`}
+      >
+        <I18nProvider locale={locale} messages={messages}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navbar />
+            <main className="min-h-screen pt-24 pb-12 mx-auto">
+              {children}
+            </main>
+            <Footer />
+          </ThemeProvider>
+        </I18nProvider>
       </body>
     </html>
   );

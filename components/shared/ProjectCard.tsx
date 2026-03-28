@@ -7,8 +7,11 @@ import { IconGithub } from "@/components/icons/brand-icons";
 import { Badge } from "@/components/ui/badge";
 import { Project } from "@/types";
 import Link from "next/link";
+import { useTranslation } from "@/hooks/use-translation";
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -43,7 +46,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             rel="noopener noreferrer"
             className="flex items-center text-sm font-medium hover:text-primary transition-colors"
           >
-            <IconGithub className="w-4 h-4 mr-2" /> Code
+            <IconGithub className="w-4 h-4 mr-2" /> {t("projectCard.code")}
           </Link>
           {project.liveUrl && (
             <Link
@@ -52,7 +55,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="flex items-center text-sm font-medium hover:text-primary transition-colors"
             >
-              <ExternalLink className="w-4 h-4 mr-2" /> Live Demo
+              <ExternalLink className="w-4 h-4 mr-2" /> {t("projectCard.liveDemo")}
             </Link>
           )}
         </div>

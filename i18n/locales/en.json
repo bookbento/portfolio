@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "home": {
+      "title": "Sarunpat Sangpak | Full-Stack Developer",
+      "description": "Portfolio — Next.js, React, TypeScript, and modern web development."
+    },
+    "about": {
+      "title": "About",
+      "description": "Background, skills, and what I build as a full-stack developer."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Selected work and side projects."
+    },
+    "experience": {
+      "title": "Experience",
+      "description": "Education and professional experience."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch for collaborations or opportunities."
+    }
+  },
+  "common": {
+    "siteName": "Portfolio"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "bannerAlt": "Sarunpat Sangpak",
+    "badge": "Available for new opportunities",
+    "greeting": "Hi, I'm",
+    "name": "Sarunpat Sangpak",
+    "role": "Junior Full-Stack Engineer",
+    "description": "Specializing in building exceptional digital experiences",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+  "home": {
+    "featuredTitle": "Featured Projects",
+    "featuredSubtitle": "Some of my recent work.",
+    "viewAll": "View All"
+  },
+  "about": {
+    "headlinePart1": "Passionate about crafting",
+    "headlinePart2": "digital experiences",
+    "p1": "Hello! I'm a Computer Science student with a strong interest in full-stack web development and a passion for learning real-world software development practices. I have experience building SEO-friendly web applications using Next.js, developing responsive user interfaces with Tailwind CSS, and working with NoSQL databases, RESTful APIs, dynamic routing, and clean URL structures (slug-based). I enjoy solving problems, debugging applications, and collaborating with teams to improve my development skills. I am eager to contribute to a development team while continuously learning and growing as a developer.",
+    "p2": "My goal is to build clean, performant, and accessible user interfaces that solve real-world problems. When I'm not coding, you can find me exploring new technologies, writing technical blogs, or enjoying a good cup of coffee.",
+    "skillsTitle": "Core Technologies",
+    "skills": ["Next.js", "React", "TypeScript", "Node.js", "Java", "Tailwind CSS", "PostgreSQL", "Docker", "AWS"]
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Have a project in mind or just want to chat? Send me a message.",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "locationValue": "Chiang Mai, Thailand (Remote OK)",
+    "nameLabel": "Name",
+    "emailFieldLabel": "Email",
+    "messageLabel": "Message",
+    "namePlaceholder": "name",
+    "emailPlaceholder": "you@gmail.com",
+    "messagePlaceholder": "How can I help you?",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "Message sent successfully.",
+    "errorGeneric": "Failed to send message.",
+    "errorNetwork": "Network error. Please try again."
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey and the companies I've had the pleasure to work with."
+  },
+  "projects": {
+    "title": "Selected Work",
+    "subtitle": "A collection of projects I've worked on. From web applications to open-source contributions."
+  },
+  "projectCard": {
+    "code": "Code",
+    "liveDemo": "Live Demo"
+  },
+  "footer": {
+    "rights": "© {{year}} Sarunpat-Sangpak. All rights reserved."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for doesn't exist or has been moved.",
+    "cta": "Back to Home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. You can try again or return to the homepage.",
+    "retry": "Try again",
+    "home": "Home"
+  }
+}

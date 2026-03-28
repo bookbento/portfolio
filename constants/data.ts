@@ -3,12 +3,20 @@ import { Project } from '@/types';
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'E-Commerce Platform',
-    description: 'A modern, high-performance e-commerce solution with Next.js App Router and Stripe integration.',
-    image: "/file.svg",
-    techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma'],
-    githubUrl: 'https://github.com/yourusername/project1',
-    liveUrl: 'https://project1.com',
+    title: 'Ninja Lingo',
+    description: 'NinjaLingo is a vocabulary learning web application focused on enhancing memorization and retention through interactive learning techniques. Designed with a clean and intuitive interface, the platform helps users efficiently build and reinforce vocabulary in an engaging way.',
+    image: "/assets/ninjalingo.png",
+    techStack: ['React', 'TypeScript', 'Tailwind', 'Astro', 'Neon'],
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://ninjalingo.com',
   },
-  // ... more projects
+  {
+    id: '2',
+    title: 'TurnPro Landing page',
+    description: 'A modern web application designed with a strong focus on SEO, performance, and scalability. Built using lightweight architecture to ensure fast load times, improved Core Web Vitals, and seamless user experience. Optimized for search engine visibility with clean structure, semantic HTML, and best practices for indexing and ranking.',
+    image: "/assets/turnpro.png",
+    techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Slug', 'Non SQL'],
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://turnprolandingpage.vercel.app/',
+  },
 ];
