@@ -40,14 +40,18 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <div className="flex items-center gap-4 mt-auto pt-4 border-t">
-          <Link
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-sm font-medium hover:text-primary transition-colors"
-          >
-            <IconGithub className="w-4 h-4 mr-2" /> {t("projectCard.code")}
-          </Link>
+          {project.githubUrl && (
+            <Link
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-sm font-medium hover:text-primary transition-colors"
+            >
+              <IconGithub className="w-4 h-4 mr-2" />
+              {t("projectCard.code")}
+            </Link>
+          )}
+
           {project.liveUrl && (
             <Link
               href={project.liveUrl}
@@ -55,7 +59,8 @@ export default function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="flex items-center text-sm font-medium hover:text-primary transition-colors"
             >
-              <ExternalLink className="w-4 h-4 mr-2" /> {t("projectCard.liveDemo")}
+              <ExternalLink className="w-4 h-4 mr-2" />
+              {t("projectCard.liveDemo")}
             </Link>
           )}
         </div>

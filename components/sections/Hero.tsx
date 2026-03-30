@@ -20,7 +20,7 @@ export default function Hero() {
           alt={t("hero.bannerAlt")}
           fill
           priority
-          className="object-cover"
+          className="object-cover rounded-xl"
         />
       </div>
       <section className="relative flex flex-col items-center justify-center min-h-[40vh] text-center overflow-hidden">
