@@ -14,7 +14,7 @@ export default function Hero() {
 
   return (
     <div>
-      <div className="relative w-full h-[80vh]">
+      <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
         <Image
           src="/assets/sarunpat.png"
           alt={t("hero.bannerAlt")}
