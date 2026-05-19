@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -53,17 +53,17 @@ export default function ContactView() {
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-6">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
       >
         <h1 className="text-4xl font-bold mb-4">{t("contact.title")}</h1>
         <p className="text-muted-foreground text-lg">{t("contact.subtitle")}</p>
-      </motion.div>
+      </m.div>
 
       <div className="grid md:grid-cols-2 gap-12">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
@@ -87,9 +87,9 @@ export default function ContactView() {
               <p className="text-muted-foreground">{t("contact.locationValue")}</p>
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.form
+        <m.form
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
@@ -151,7 +151,7 @@ export default function ContactView() {
             {isSubmitting ? t("contact.submitting") : t("contact.submit")}
             {!isSubmitting && <Send className="w-4 h-4 ml-2" />}
           </Button>
-        </motion.form>
+        </m.form>
       </div>
     </div>
   );

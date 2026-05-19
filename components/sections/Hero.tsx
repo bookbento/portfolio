@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -20,11 +20,13 @@ export default function Hero() {
           alt={t("hero.bannerAlt")}
           fill
           priority
+          quality={90}
+          sizes="100vw"
           className="object-cover rounded-xl"
         />
       </div>
       <section className="relative flex flex-col items-center justify-center min-h-[40vh] text-center overflow-hidden">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -45,9 +47,9 @@ export default function Hero() {
           <p className="mt-3 mb-8 text-xl text-muted-foreground max-w-2xl mx-auto font-light">
             {t("hero.description")}
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -61,7 +63,7 @@ export default function Hero() {
           <Button asChild variant="outline" size="lg" className="rounded-2xl">
             <Link href={path("/contact")}>{t("hero.contactMe")}</Link>
           </Button>
-        </motion.div>
+        </m.div>
       </section>
     </div>
   );

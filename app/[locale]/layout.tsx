@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { I18nProvider } from "@/components/providers/i18n-provider";
+import { MotionProvider } from "@/components/providers/motion-provider";
 import { getMessages } from "@/i18n/load-messages";
 import { isAppLocale, type AppLocale } from "@/i18n/config";
 import "@/app/globals.css";
@@ -48,13 +49,15 @@ export default async function RootLayout({
         className={`${kanit.variable} font-sans antialiased bg-background text-foreground`}
       >
         <I18nProvider locale={locale} messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <Navbar />
-            <main className="min-h-screen pt-24 pb-12 mx-auto">
-              {children}
-            </main>
-            <Footer />
-          </ThemeProvider>
+          <MotionProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <Navbar />
+              <main className="min-h-screen pt-24 pb-12 mx-auto">
+                {children}
+              </main>
+              <Footer />
+            </ThemeProvider>
+          </MotionProvider>
         </I18nProvider>
       </body>
     </html>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "@/hooks/use-translation";
@@ -11,7 +11,7 @@ export default function AboutView() {
 
   return (
     <div className="max-w-5xl mx-auto py-12 space-y-16 px-6">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="flex flex-col md:flex-row gap-12 items-center"
@@ -19,7 +19,7 @@ export default function AboutView() {
         <div className="w-full md:w-1/3 relative aspect-square rounded-3xl overflow-hidden shadow-xl">
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10 rounded-3xl" />
           <Image
-            src="/assets/IMG_9057.jpg"
+            src="/assets/about.jpeg"
             alt={t("about.headlinePart1")}
             fill
             className="object-cover"
@@ -51,7 +51,7 @@ export default function AboutView() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

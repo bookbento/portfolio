@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Experience } from '@/types';
 
 export default function Timeline({ items }: { items: Experience[] }) {
   return (
     <div className="relative border-l border-muted-foreground/20 ml-3 md:ml-6 space-y-12 pb-8">
       {items.map((item, index) => (
-        <motion.div 
+        <m.div 
           key={item.id}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -37,7 +37,7 @@ export default function Timeline({ items }: { items: Experience[] }) {
               ))}
             </ul>
           </div>
-        </motion.div>
+        </m.div>
       ))}
     </div>
   );

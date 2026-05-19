@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 import { LangSwitcher } from "./LangSwitcher";
 import { useTranslation } from "@/hooks/use-translation";
@@ -22,7 +22,7 @@ export default function Navbar() {
   ];
 
   return (
-    <motion.header
+    <m.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
@@ -51,6 +51,6 @@ export default function Navbar() {
           <ThemeToggle />
         </div>
       </div>
-    </motion.header>
+    </m.header>
   );
 }

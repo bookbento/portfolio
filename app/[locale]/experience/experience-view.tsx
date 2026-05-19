@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Timeline from "@/components/shared/Timeline";
 import type { Experience } from "@/types";
 import { useTranslation } from "@/hooks/use-translation";
@@ -37,14 +37,14 @@ export default function ExperienceView() {
 
   return (
     <div className="max-w-4xl mx-auto py-12 space-y-12 px-6">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="space-y-4"
       >
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">{t("experience.title")}</h1>
         <p className="text-lg text-muted-foreground">{t("experience.subtitle")}</p>
-      </motion.div>
+      </m.div>
 
       <div className="pt-8">
         <Timeline items={experiences} />

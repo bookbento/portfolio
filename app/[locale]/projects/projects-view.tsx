@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import ProjectCard from "@/components/shared/ProjectCard";
 import { projects } from "@/constants/data";
 import { useTranslation } from "@/hooks/use-translation";
@@ -29,7 +29,7 @@ export default function ProjectsView() {
   return (
     <div className="max-w-7xl mx-auto py-12 space-y-16 px-6">
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="space-y-4 max-w-2xl"
@@ -40,7 +40,7 @@ export default function ProjectsView() {
         <p className="text-lg text-muted-foreground">
           {t("projects.subtitle")}
         </p>
-      </motion.div>
+      </m.div>
 
 
       {order.map((type) =>
@@ -54,14 +54,14 @@ export default function ProjectsView() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {groupedProjects[type].map((project, index) => (
-                <motion.div
+                <m.div
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
                   <ProjectCard project={project} />
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>

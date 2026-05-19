@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { IconGithub } from "@/components/icons/brand-icons";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   const { t } = useTranslation();
 
   return (
-    <motion.div
+    <m.div
       whileHover={{ y: -5 }}
       className="group flex flex-col bg-card border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
     >
@@ -22,6 +22,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           src={project.image}
           alt={project.title}
           fill
+          quality={80}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
@@ -65,6 +66,6 @@ export default function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }
