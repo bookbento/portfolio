@@ -15,7 +15,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <m.div
       whileHover={{ y: -5 }}
-      className="group flex flex-col bg-card border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+      className="group flex flex-col bg-card border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
     >
       <div className="relative h-56 w-full overflow-hidden">
         <Image
