@@ -18,6 +18,7 @@ export default function Navbar() {
     { key: "nav.about" as const, href: path("/about") },
     { key: "nav.projects" as const, href: path("/projects") },
     { key: "nav.experience" as const, href: path("/experience") },
+    { key: "nav.aiTeam" as const, href: path("/ai-team") },
     { key: "nav.contact" as const, href: path("/contact") },
   ];
 

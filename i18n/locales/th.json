@@ -19,6 +19,10 @@
     "contact": {
       "title": "ติดต่อ",
       "description": "ติดต่อเพื่อร่วมงานหรือโอกาสใหม่"
+    },
+    "aiTeam": {
+      "title": "ทีม AI",
+      "description": "10 AI agents ที่ขับเคลื่อน pipeline ของ portfolio นี้"
     }
   },
   "common": {
@@ -29,6 +33,7 @@
     "about": "เกี่ยวกับฉัน",
     "projects": "ผลงาน",
     "experience": "ประสบการณ์",
+    "aiTeam": "ทีม AI",
     "contact": "ติดต่อ"
   },
   "hero": {
@@ -39,7 +44,9 @@
     "role": "Junior Full-Stack Engineer",
     "description": "ทะเยอทะยานที่จะเป็น Senior ครับ !!",
     "viewProjects": "ดูผลงาน",
-    "contactMe": "ติดต่อฉัน"
+    "contactMe": "ติดต่อฉัน",
+    "aiTeamLabel": "ขับเคลื่อนโดย AI agents",
+    "aiTeamCta": "พบกับทีม →"
   },
   "home": {
     "featuredTitle": "ผลงานเด่น",

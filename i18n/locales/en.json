@@ -19,6 +19,10 @@
     "contact": {
       "title": "Contact",
       "description": "Get in touch for collaborations or opportunities."
+    },
+    "aiTeam": {
+      "title": "AI Team",
+      "description": "The 10 AI agents that power this portfolio's pipeline."
     }
   },
   "common": {
@@ -29,6 +33,7 @@
     "about": "About",
     "projects": "Projects",
     "experience": "Experience",
+    "aiTeam": "AI Team",
     "contact": "Contact"
   },
   "hero": {
@@ -39,7 +44,9 @@
     "role": "Junior Full-Stack Engineer",
     "description": "Specializing in building exceptional digital experiences",
     "viewProjects": "View Projects",
-    "contactMe": "Contact Me"
+    "contactMe": "Contact Me",
+    "aiTeamLabel": "Powered by AI agents",
+    "aiTeamCta": "Meet the team →"
   },
   "home": {
     "featuredTitle": "Featured Projects",

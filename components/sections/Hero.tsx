@@ -64,6 +64,19 @@ export default function Hero() {
             <Link href={path("/contact")}>{t("hero.contactMe")}</Link>
           </Button>
         </m.div>
+
+        <m.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.4 }}
+          className="mt-8 pt-6 border-t border-border/40"
+        >
+          <p className="text-sm text-muted-foreground mb-2">{t("hero.aiTeamLabel")}</p>
+          <Link href={path("/ai-team")} className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+            {t("hero.aiTeamCta")}
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </m.div>
       </section>
     </div>
   );
