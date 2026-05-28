@@ -183,9 +183,6 @@ function AgentModal({ agentId, onClose }: AgentModalProps) {
                 sizes="40vw"
               />
             )}
-            <div className="monogram" aria-hidden="true">
-              {monogram}
-            </div>
             <div className="meta-top">
               <span>
                 Profile · {String(agentIndex + 1).padStart(2, "0")} /{" "}
