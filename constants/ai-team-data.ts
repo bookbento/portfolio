@@ -50,7 +50,7 @@ export interface ExampleTask {
 export const TEAM: Agent[] = [
   {
     id: "palm",
-    handle: "palm",
+    handle: "Palm",
     file: "chief-dispatcher.md",
     title: "Chief Dispatcher",
     pipeline: "Orchestrator",
@@ -75,7 +75,7 @@ export const TEAM: Agent[] = [
   },
   {
     id: "utahime",
-    handle: "utahime",
+    handle: "Utahime",
     file: "planner.md",
     title: "Planner",
     pipeline: "Planning",
@@ -100,7 +100,7 @@ export const TEAM: Agent[] = [
   },
   {
     id: "nitta",
-    handle: "nitta",
+    handle: "Nitta",
     file: "tdd-guide.md",
     title: "TDD Guide",
     pipeline: "Testing",
@@ -125,7 +125,7 @@ export const TEAM: Agent[] = [
   },
   {
     id: "code-viview",
-    handle: "viview",
+    handle: "Viview",
     file: "code-reviewer.md",
     title: "Code Reviewer",
     pipeline: "Quality Gate",
@@ -150,7 +150,7 @@ export const TEAM: Agent[] = [
   },
   {
     id: "fondy",
-    handle: "fondy",
+    handle: "Fondy",
     file: "typescript-reviewer.md",
     title: "TypeScript Reviewer",
     pipeline: "Quality Gate",
@@ -175,7 +175,7 @@ export const TEAM: Agent[] = [
   },
   {
     id: "benji",
-    handle: "benji",
+    handle: "Benji",
     file: "database-reviewer.md",
     title: "Database Reviewer",
     pipeline: "Quality Gate",
@@ -200,7 +200,7 @@ export const TEAM: Agent[] = [
   },
   {
     id: "ieiri",
-    handle: "ieiri",
+    handle: "Ieiri",
     file: "security-reviewer.md",
     title: "Security Reviewer",
     pipeline: "Quality Gate",
@@ -225,7 +225,7 @@ export const TEAM: Agent[] = [
   },
   {
     id: "the-end",
-    handle: "the-end",
+    handle: "The end",
     file: "e2e-runner.md",
     title: "E2E Runner",
     pipeline: "Testing",
@@ -255,7 +255,7 @@ export const TEAM: Agent[] = [
   },
   {
     id: "silent-hunter",
-    handle: "silent-hunter",
+    handle: "Silent hunter",
     file: "silent-failure-hunter.md",
     title: "Silent Failure Hunter",
     pipeline: "Testing",
@@ -280,7 +280,7 @@ export const TEAM: Agent[] = [
   },
   {
     id: "performante-optimizer",
-    handle: "performante-optimizer",
+    handle: "Performante",
     file: "performance-optimizer.md",
     title: "Performance Optimizer",
     pipeline: "Performance",
