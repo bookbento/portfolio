@@ -498,11 +498,11 @@ function TeamGridSection({ onOpen }: TeamGridSectionProps) {
         </h1>
         <div className="hero-stats">
           <div className="hero-stat">
-            <span className="num">10</span>
+            <span className="num">{TEAM.length}</span>
             <span className="lbl">Agents</span>
           </div>
           <div className="hero-stat">
-            <span className="num">5</span>
+            <span className="num">{PIPELINES.length}</span>
             <span className="lbl">Pipelines</span>
           </div>
           <div className="hero-stat">

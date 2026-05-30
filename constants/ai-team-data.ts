@@ -5,7 +5,8 @@ export type PipelineId =
   | "Planning"
   | "Quality Gate"
   | "Testing"
-  | "Performance";
+  | "Performance"
+  | "Advisory";
 
 export interface AgentWorkflow {
   inputs: string[];
@@ -303,6 +304,31 @@ export const TEAM: Agent[] = [
     tools: ["Lighthouse", "perf", "Chrome tracing", "Bundle analyzer"],
     stats: { handled: "5.1K", uptime: "99.93%", avgRouting: "46s" },
   },
+  {
+    id: "gun",
+    handle: "Gun",
+    file: "portfolio-advisor.md",
+    title: "Portfolio Advisor",
+    pipeline: "Advisory",
+    pronoun: "she",
+    tagline: "Long-term beats lucky.\nNo hype. No guarantees.",
+    summary:
+      "Personal DCA portfolio advisor. Pulls live prices and macro context, grades portfolio health, recommends add / trim / hold, and logs every monthly buy to memory. Data and risk over hype — never guarantees a return.",
+    personality: [
+      "Data over hype",
+      "Allergic to FOMO",
+      "Never guarantees returns",
+      "Thinks in 20-year horizons",
+    ],
+    workflow: {
+      inputs: ["user request"],
+      handsOffTo: [],
+      receivesFrom: [],
+      role: "Standalone advisory loop — load context, research live data, report portfolio health, recommend, then log the DCA to memory.",
+    },
+    tools: ["Claude Opus 4.1", "WebSearch", "WebFetch", "Live market data", "Memory (markdown)"],
+    stats: { handled: "248", uptime: "99.99%", avgRouting: "3.4min" },
+  },
 ];
 
 export const PIPELINES: Pipeline[] = [
@@ -311,6 +337,7 @@ export const PIPELINES: Pipeline[] = [
   { id: "Quality Gate", label: "Quality Gate", dot: "#991B1B" },
   { id: "Testing", label: "Testing", dot: "#1E40AF" },
   { id: "Performance", label: "Performance", dot: "#5B21B6" },
+  { id: "Advisory", label: "Advisory", dot: "#15803D" },
 ];
 
 // Sequential flow order for the Pipeline page
@@ -349,6 +376,7 @@ export const PORTRAIT_GRADIENTS: Record<string, [string, string, string]> = {
   "the-end": ["#3a1f2a", "#7a3e5c", "#c78fa8"],
   "silent-hunter": ["#1f2a3a", "#3e5c7a", "#8fa8c7"],
   "performante-optimizer": ["#3a2e1f", "#a85c1f", "#e8a85c"],
+  gun: ["#1f3a2a", "#2e7a4f", "#7fc79a"],
 };
 
 export const AGENT_IMAGES: Record<string, string> = {
@@ -362,4 +390,5 @@ export const AGENT_IMAGES: Record<string, string> = {
   "the-end": "/teams/the-end.png",
   "silent-hunter": "/teams/silent-hunter.png",
   "performante-optimizer": "/teams/performante.png",
+  gun: "/teams/gun.png",
 };
