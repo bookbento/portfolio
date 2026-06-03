@@ -56,7 +56,7 @@ function AgentCard({ agent, index, total, onOpen }: AgentCardProps) {
             alt={agent.handle}
             fill
             className="object-cover object-top"
-            sizes="(max-width: 800px) 50vw, (max-width: 1100px) 33vw, 25vw"
+            sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, (max-width: 1100px) 33vw, 25vw"
           />
         )}
       </div>
@@ -180,7 +180,7 @@ function AgentModal({ agentId, onClose }: AgentModalProps) {
                 alt={a.handle}
                 fill
                 className="object-cover object-top"
-                sizes="40vw"
+                sizes="(max-width: 640px) 100vw, 40vw"
               />
             )}
             <div className="meta-top">
@@ -612,7 +612,7 @@ function PipelineSection() {
         <div className="hero-eyebrow eyebrow">Pipeline flow</div>
         <h1
           className="hero-title"
-          style={{ fontSize: "clamp(48px, 6vw, 92px)" }}
+          style={{ fontSize: "clamp(28px, 6vw, 92px)" }}
         >
           One task,
           <br />
