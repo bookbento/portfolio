@@ -7,6 +7,8 @@ import { I18nProvider } from "@/components/providers/i18n-provider";
 import { MotionProvider } from "@/components/providers/motion-provider";
 import { getMessages } from "@/i18n/load-messages";
 import { isAppLocale, type AppLocale } from "@/i18n/config";
+import JsonLd from "@/components/seo/JsonLd";
+import { personSchema, websiteSchema } from "@/lib/structured-data";
 import "@/app/globals.css";
 
 const kanit = Kanit({
@@ -25,9 +27,14 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio of an experienced developer specializing in Next.js, React, and TypeScript.",
+  authors: [{ name: "Sarunpat Sangpak", url: siteUrl }],
+  creator: "Sarunpat Sangpak",
   openGraph: {
     type: "website",
     siteName: "Sarunpat Sangpak",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
@@ -48,6 +55,7 @@ export default async function RootLayout({
       <body
         className={`${kanit.variable} font-sans antialiased bg-background text-foreground`}
       >
+        <JsonLd data={[personSchema(), websiteSchema()]} />
         <I18nProvider locale={locale} messages={messages}>
           <MotionProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
