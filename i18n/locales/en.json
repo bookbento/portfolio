@@ -1,12 +1,12 @@
 {
   "meta": {
     "home": {
-      "title": "Sarunpat Sangpak | Full-Stack Developer",
+      "title": "Sarunpat Sangpak | Full-Stack Engineer",
       "description": "Portfolio — Next.js, React, TypeScript, and modern web development."
     },
     "about": {
       "title": "About",
-      "description": "Background, skills, and what I build as a full-stack developer."
+      "description": "Background, skills, and what I build as a full-stack engineer."
     },
     "projects": {
       "title": "Projects",
@@ -39,7 +39,6 @@
   "hero": {
     "bannerAlt": "Sarunpat Sangpak",
     "badge": "Available for new opportunities",
-    "greeting": "Hi, I'm",
     "name": "Sarunpat Sangpak",
     "role": "Junior Full-Stack Engineer",
     "description": "Specializing in building exceptional digital experiences",

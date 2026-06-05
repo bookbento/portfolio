@@ -7,7 +7,7 @@ import type { AppLocale } from "@/i18n/config";
  */
 
 const PERSON_NAME = "Sarunpat Sangpak";
-const PERSON_JOB_TITLE = "Full-Stack Developer";
+const PERSON_JOB_TITLE = "Full-Stack Engineer";
 
 /** Real, verified profiles only. LinkedIn omitted until a real URL exists. */
 const PERSON_SAME_AS = [

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Image from "next/image";
 import {
   TEAM,
@@ -107,11 +107,9 @@ function AgentModal({ agentId, onClose }: AgentModalProps) {
   const agent = TEAM.find((a) => a.id === agentId) ?? null;
   const isOpen = agent !== null;
 
-  // Keep last-rendered agent around during close transition
-  const [shown, setShown] = useState<Agent | null>(agent);
-  useEffect(() => {
-    if (agent) setShown(agent);
-  }, [agent]);
+  // Keep last-rendered agent around during close transition (ref latch — no extra render)
+  const shownRef = useRef<Agent | null>(agent);
+  if (agent) shownRef.current = agent;
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -121,7 +119,7 @@ function AgentModal({ agentId, onClose }: AgentModalProps) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [isOpen, onClose]);
 
-  const a = agent ?? shown;
+  const a = agent ?? shownRef.current;
   if (!a) return null;
 
   const pipelineMeta = PIPELINES.find((p) => p.id === a.pipeline);

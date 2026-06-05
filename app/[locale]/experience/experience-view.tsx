@@ -8,7 +8,7 @@ import { useTranslation } from "@/hooks/use-translation";
 const experiences: Experience[] = [
   {
     id: "1",
-    role: "Apprentice Full-Stack Developer",
+    role: "Apprentice Full-Stack Engineer",
     company: "TurnPro Company",
     duration: "Present",
     description: [

@@ -35,7 +35,6 @@ export default function Hero() {
             {t("hero.badge")}
           </span>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mt-4">
-            {t("hero.greeting")}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B98B91] to-orange-300">
               {t("hero.name")}
             </span>
