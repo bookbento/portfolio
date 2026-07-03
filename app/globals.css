@@ -77,6 +77,188 @@ body {
 }
 
 /* ============================================================
+   Premium motion — tokens + utilities
+   Slow, restrained, editorial. Pair with useReveal() from
+   hooks/use-reveal.ts, which adds `.is-in` on viewport entry.
+   Stagger via inline style: transitionDelay: `${i * 60}ms`.
+   See .claude/skills/premium-motion/SKILL.md for recipes.
+   ============================================================ */
+
+:root {
+  --ease-luxe: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-inout-luxe: cubic-bezier(0.76, 0, 0.24, 1);
+  --duration-reveal: 1.4s;
+  --duration-fade: 1.8s;
+  --duration-ui: 0.7s;
+  --duration-zoom: 1.8s;
+}
+
+/* Scroll reveals */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--duration-reveal) var(--ease-luxe),
+    transform var(--duration-reveal) var(--ease-luxe);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity var(--duration-fade) var(--ease-luxe);
+}
+.reveal-fade.is-in {
+  opacity: 1;
+}
+
+/* Text mask reveal: direct children slide up from behind an overflow mask */
+.reveal-mask {
+  overflow: hidden;
+}
+.reveal-mask > * {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform var(--duration-reveal) var(--ease-luxe);
+}
+.reveal-mask.is-in > * {
+  transform: translateY(0);
+}
+
+/* Word-mask hero title: split headline into .word > span pairs */
+.hero-mask .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.hero-mask .word > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform var(--duration-reveal) var(--ease-luxe);
+}
+.hero-mask.is-in .word > span {
+  transform: translateY(0);
+}
+
+/* Underline that wipes out to the right, then redraws from the left */
+.btn-line {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+.btn-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform-origin: right center;
+  transform: scaleX(1);
+  transition: transform var(--duration-ui) var(--ease-inout-luxe);
+}
+.btn-line:hover::after {
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: btn-line-in var(--duration-ui) var(--ease-inout-luxe) var(--duration-ui) forwards;
+}
+@keyframes btn-line-in {
+  from {
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+  to {
+    transform-origin: left center;
+    transform: scaleX(1);
+  }
+}
+
+/* Slow image zoom on hover (wrap the image; works with next/image fill) */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform var(--duration-zoom) var(--ease-luxe);
+}
+.img-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* Ken Burns drift for hero imagery */
+@keyframes ken-burns {
+  from {
+    transform: scale(1.08) translate(0%, 0%);
+  }
+  to {
+    transform: scale(1.18) translate(-1.5%, 1%);
+  }
+}
+.ken-burns {
+  animation: ken-burns 12s linear forwards;
+  will-change: transform;
+}
+
+/* Analog grain texture overlay */
+.grain {
+  position: relative;
+}
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+}
+.dark .grain::before {
+  mix-blend-mode: screen;
+  opacity: 0.04;
+}
+
+/* Auto-hiding nav shell (pair with useScrollDir from hooks/use-scroll-dir.ts) */
+.nav-shell {
+  transition:
+    transform var(--duration-ui) var(--ease-inout-luxe),
+    background-color var(--duration-ui) ease,
+    color var(--duration-ui) ease,
+    border-color var(--duration-ui) ease;
+}
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-fade,
+  .reveal-mask > *,
+  .hero-mask .word > span,
+  .btn-line::after,
+  .img-zoom img,
+  .nav-shell {
+    transition: none;
+  }
+  .reveal,
+  .reveal-mask > *,
+  .hero-mask .word > span {
+    transform: none;
+  }
+  .ken-burns {
+    animation: none;
+  }
+  .btn-line:hover::after {
+    animation: none;
+    transform: scaleX(1);
+  }
+  .img-zoom:hover img {
+    transform: none;
+  }
+}
+
+/* ============================================================
    AI Team page — scoped under .ai-team-page
    Cream theme, isolated from portfolio light/dark mode.
    ============================================================ */

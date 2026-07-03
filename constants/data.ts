@@ -2,6 +2,26 @@ import { Project } from '@/types';
 
 export const projects: Project[] = [
   {
+    id: '6',
+    title: 'Hylife IT Asset Management',
+    description: 'An internal IT asset management system built for Hylife, covering the full lifecycle of company hardware and equipment — registration, assignment, tracking, and maintenance history — through complete CRUD workflows. Built with Next.js on the frontend and NestJS with PostgreSQL on the backend, deployed on AWS EC2 behind Nginx with PM2 process management.',
+    type: 'production',
+    image: '/assets/hylife-assets-placeholder.png',
+    techStack: ['Next.js', 'NestJS', 'PostgreSQL', 'AWS EC2', 'PM2', 'Nginx'],
+    githubUrl: undefined,
+    liveUrl: undefined,
+  },
+  {
+    id: '7',
+    title: 'Enterprise AI Agentic Platform',
+    description: 'An enterprise-grade agentic AI platform that gives every department its own multi-agent workflows. Designed the agentic workflow architecture — orchestrator agents delegating to specialized sub-agents per department — together with an AI gateway that routes each request between local AI models and cloud AI providers based on configurable rules for cost, privacy, and capability.',
+    type: 'production',
+    image: '/assets/ai-agentic-placeholder.png',
+    techStack: ['Multi-Agent', 'Sub-Agents', 'AI Gateway', 'Local LLM', 'Cloud AI'],
+    githubUrl: undefined,
+    liveUrl: undefined,
+  },
+  {
     id: '1',
     title: 'Ninja Lingo',
     description: 'NinjaLingo is a vocabulary learning web application focused on enhancing memorization and retention through interactive learning techniques. Designed with a clean and intuitive interface, the platform helps users efficiently build and reinforce vocabulary in an engaging way.',
