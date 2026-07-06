@@ -17,10 +17,13 @@ const PERSON_SAME_AS = [
 
 const PERSON_SKILLS = [
   "Next.js",
+  "NestJS",
   "React",
+  "React Native",
   "TypeScript",
   "Node.js",
   "Java",
+  "Golang",
   "Tailwind CSS",
   "PostgreSQL",
   "Docker",

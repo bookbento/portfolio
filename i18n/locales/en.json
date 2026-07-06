@@ -61,12 +61,18 @@
     "viewAllCount": "View all {{count}} projects"
   },
   "about": {
-    "headlinePart1": "Passionate about crafting",
-    "headlinePart2": "digital experiences",
+    "headline": "Software Engineer",
     "p1": "Hello! I'm a Computer Science student with a strong interest in full-stack web development and a passion for learning real-world software development practices. I have experience building SEO-friendly web applications using Next.js, developing responsive user interfaces with Tailwind CSS, and working with NoSQL databases, RESTful APIs, dynamic routing, and clean URL structures (slug-based). I enjoy solving problems, debugging applications, and collaborating with teams to improve my development skills. I am eager to contribute to a development team while continuously learning and growing as a developer.",
-    "p2": "My goal is to build clean, performant, and accessible user interfaces that solve real-world problems. When I'm not coding, you can find me exploring new technologies, writing technical blogs, or enjoying a good cup of coffee.",
+    "p2": "My goal is to grow from a hands-on engineer into a tech lead — and one day a CTO. Someone who still cares about clean, performant, accessible code, but also shapes the team and the product around it. When I'm not coding, you can find me exploring new technologies, writing technical blogs, or enjoying a good cup of coffee.",
+    "storyLabel": "The Story",
+    "factLocation": "Location",
+    "factFocus": "Focus",
+    "factStatus": "Status",
+    "ctaEyebrow": "Next",
+    "ctaTitle": "Let's build something together",
+    "skillsEyebrow": "The Stack",
     "skillsTitle": "Core Technologies",
-    "skills": ["Next.js", "React", "TypeScript", "Node.js", "Java", "Tailwind CSS", "PostgreSQL", "Docker", "AWS"]
+    "skills": ["Next.js","NestJS","React","React Native","TypeScript","Node.js","Java","Golang","Tailwind CSS","PostgreSQL","Docker","AWS"]
   },
   "contact": {
     "title": "Let's Connect",
