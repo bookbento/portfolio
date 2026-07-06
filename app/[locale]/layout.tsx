@@ -1,4 +1,4 @@
-import { Kanit } from "next/font/google";
+import { Bodoni_Moda, Kanit } from "next/font/google";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
@@ -15,6 +15,12 @@ const kanit = Kanit({
   subsets: ["latin", "thai"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-kanit",
+});
+
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-bodoni",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -53,7 +59,7 @@ export default async function RootLayout({
   return (
     <html lang={htmlLang} suppressHydrationWarning>
       <body
-        className={`${kanit.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${kanit.variable} ${bodoni.variable} font-sans antialiased bg-background text-foreground`}
       >
         <JsonLd data={[personSchema(), websiteSchema()]} />
         <I18nProvider locale={locale} messages={messages}>

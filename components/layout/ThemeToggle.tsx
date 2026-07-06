@@ -1,45 +1,40 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/hooks/use-translation";
 
-export function ThemeToggle() {
+interface ThemeToggleProps {
+  className?: string;
+}
+
+export function ThemeToggle({ className = "" }: ThemeToggleProps) {
   const { resolvedTheme, setTheme } = useTheme();
+  const { t } = useTranslation();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
     setMounted(true);
   }, []);
 
-  const toggle = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
-  };
+  const isDark = mounted && resolvedTheme === "dark";
+  // Label names the theme the click switches to.
+  const label = isDark ? t("nav.themeLight") : t("nav.themeDark");
 
   return (
-    <Button
+    <button
       type="button"
-      variant="ghost"
-      size="icon"
-      className="relative rounded-full w-9 h-9 cursor-pointer"
-      onClick={toggle}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className={`btn-line cursor-pointer ${mounted ? "" : "opacity-50"} ${className}`}
       aria-label={
         mounted
-          ? resolvedTheme === "dark"
+          ? isDark
             ? "Switch to light mode"
             : "Switch to dark mode"
           : "Toggle color theme"
       }
     >
-      {!mounted ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] opacity-40" aria-hidden />
-      ) : (
-        <>
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" aria-hidden />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" aria-hidden />
-        </>
-      )}
-    </Button>
+      {label}
+    </button>
   );
 }

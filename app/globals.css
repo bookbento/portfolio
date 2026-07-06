@@ -69,6 +69,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
   --font-sans: var(--font-kanit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bodoni), "Bodoni Moda", Georgia, serif;
 }
 
 body {
@@ -145,7 +146,8 @@ body {
 /* Underline that wipes out to the right, then redraws from the left */
 .btn-line {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding-bottom: 6px;
 }
 .btn-line::after {

@@ -24,6 +24,8 @@ Stagger unit: **60ms** per item (`style={{ transitionDelay: `${i * 60}ms` }}`); 
 
 ## Installed utilities
 
+> **Layering gotcha:** the utility classes below live in `globals.css` *unlayered*, so any property they set beats Tailwind utilities on the same element regardless of class order. Known traps: `.grain` sets `position: relative` (overrides `fixed`/`absolute` — put `grain` on an inner wrapper of fixed overlays) and `.btn-line` sets `display: inline-flex` (overrides `hidden`/responsive display utilities — wrap in a `<span className="hidden md:inline-flex">` to hide responsively).
+
 ### Scroll reveal system
 
 `hooks/use-reveal.ts` exports `useReveal()` — one IntersectionObserver that adds `.is-in` to every `.reveal` / `.reveal-fade` / `.reveal-mask` element, then unobserves. Call it **once** in the page-level client view (e.g. in `*-view.tsx`). It already handles `prefers-reduced-motion` (reveals everything immediately).

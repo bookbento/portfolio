@@ -34,23 +34,31 @@
     "projects": "Projects",
     "experience": "Experience",
     "aiTeam": "AI Team",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "index": "Index",
+    "themeDark": "Dark",
+    "themeLight": "Light"
   },
   "hero": {
     "bannerAlt": "Sarunpat Sangpak",
     "badge": "Available for new opportunities",
     "name": "Sarunpat Sangpak",
     "role": "Junior Full-Stack Engineer",
-    "description": "Specializing in building exceptional digital experiences",
+    "description": " ",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me",
     "aiTeamLabel": "Team created by me",
-    "aiTeamCta": "Meet the team"
+    "aiTeamCta": "Meet the team",
+    "location": "Chiang Mai — Thailand"
   },
   "home": {
     "featuredTitle": "Featured Projects",
     "featuredSubtitle": "Some of my recent work.",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "viewProject": "View Project",
+    "viewAllCount": "View all {{count}} projects"
   },
   "about": {
     "headlinePart1": "Passionate about crafting",

@@ -1,8 +1,6 @@
 "use client";
 
-import { Globe } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 import {
   type AppLocale,
   LOCALE_COOKIE,
@@ -14,9 +12,12 @@ import {
   stripLocaleFromPathname,
 } from "@/lib/i18n-paths";
 
-export function LangSwitcher() {
+interface LangSwitcherProps {
+  className?: string;
+}
+
+export function LangSwitcher({ className = "" }: LangSwitcherProps) {
   const pathname = usePathname();
-  const router = useRouter();
   const current = localeFromPathname(pathname);
   const target: AppLocale = current === "en" ? "th" : "en";
 
@@ -26,20 +27,21 @@ export function LangSwitcher() {
     const nextPath = localeHref(target, publicPath);
 
     document.cookie = `${LOCALE_COOKIE}=${target};path=/;max-age=${LOCALE_COOKIE_MAX_AGE};SameSite=Lax`;
-    router.push(nextPath);
-    router.refresh();
+    // Changing the [locale] param remounts the whole segment anyway, and a
+    // client-side remount recreates next-themes' inline <script> (which React
+    // never executes on the client — dev warning). A full navigation runs the
+    // theme script natively on the fresh document instead.
+    window.location.assign(nextPath);
   };
 
   return (
-    <Button
+    <button
       type="button"
-      variant="ghost"
-      size="icon"
-      className="rounded-full w-9 h-9"
       onClick={switchLanguage}
+      className={`btn-line cursor-pointer uppercase ${className}`}
       aria-label={current === "en" ? "Switch to Thai" : "Switch to English"}
     >
-      <Globe className="h-[1.15rem] w-[1.15rem]" aria-hidden />
-    </Button>
+      {target}
+    </button>
   );
 }

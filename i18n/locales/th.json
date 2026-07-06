@@ -34,7 +34,12 @@
     "projects": "ผลงาน",
     "experience": "ประสบการณ์",
     "aiTeam": "ทีม AI",
-    "contact": "ติดต่อ"
+    "contact": "ติดต่อ",
+    "menu": "เมนู",
+    "close": "ปิด",
+    "index": "สารบัญ",
+    "themeDark": "โหมดมืด",
+    "themeLight": "โหมดสว่าง"
   },
   "hero": {
     "bannerAlt": "ศรัญภัทร แสงปัก",
@@ -45,12 +50,15 @@
     "viewProjects": "ดูผลงาน",
     "contactMe": "ติดต่อฉัน",
     "aiTeamLabel": "ทีม AI Agents ของผม",
-    "aiTeamCta": "พบกับทีม"
+    "aiTeamCta": "พบกับทีม",
+    "location": "เชียงใหม่ — ประเทศไทย"
   },
   "home": {
     "featuredTitle": "ผลงานเด่น",
     "featuredSubtitle": "บางส่วนจากงานล่าสุดของผม",
-    "viewAll": "ดูทั้งหมด"
+    "viewAll": "ดูทั้งหมด",
+    "viewProject": "ดูรายละเอียด",
+    "viewAllCount": "ดูผลงานทั้งหมด {{count}} โปรเจกต์"
   },
   "about": {
     "headlinePart1": "หลงใหลในการสร้าง",

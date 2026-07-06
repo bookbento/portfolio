@@ -23,7 +23,7 @@ export async function generateMetadata({
 
 export default function HomePage() {
   return (
-    <div className="space-y-32">
+    <div className="space-y-24">
       <Hero />
       <HomeFeatured />
     </div>

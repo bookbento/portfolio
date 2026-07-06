@@ -1,82 +1,117 @@
 "use client";
 
-import { m } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useReveal } from "@/hooks/use-reveal";
 import { useTranslation } from "@/hooks/use-translation";
 import { useLocalePath } from "@/hooks/use-locale-path";
 
+const WORD_STAGGER_MS = 120;
+const WORD_LEAD_IN_MS = 200;
+
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const { path } = useLocalePath();
+  useReveal();
+
+  const isThai = locale === "th";
+  const nameWords = t("hero.name").split(" ");
+  // Wide letter-spacing breaks Thai combining marks — keep it for Latin only.
+  const eyebrow = `text-[11px] uppercase ${isThai ? "tracking-[0.08em]" : "tracking-[0.35em]"} text-muted-foreground`;
+  const ctaLabel = isThai
+    ? "text-sm tracking-[0.08em]"
+    : "text-xs uppercase tracking-[0.18em]";
 
   return (
-    <div>
-      <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+    <section className="grain relative mx-auto flex max-w-[1600px] flex-col px-6 md:px-10 lg:px-16">
+      <div className="reveal flex items-baseline justify-between gap-4 border-b border-border pb-5">
+        <span className={eyebrow}>— {t("hero.badge")}</span>
+        <span className={`${eyebrow} hidden sm:block`}>{t("hero.location")}</span>
+      </div>
+
+      <div className="reveal-fade relative mt-6 aspect-[16/9] overflow-hidden md:aspect-[21/9]">
         <Image
           src="/assets/sarunpat.png"
           alt={t("hero.bannerAlt")}
           fill
           priority
+          fetchPriority="high"
           quality={90}
-          sizes="100vw"
-          className="object-cover rounded-xl"
+          sizes="(max-width: 1600px) 100vw, 1600px"
+          className="ken-burns object-cover"
         />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/30" />
       </div>
-      <section className="relative flex flex-col items-center justify-center min-h-[40vh] text-center overflow-hidden">
-        <m.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+
+      <div className="flex flex-1 flex-col justify-center py-14 md:py-20">
+        <h1
+          className={`hero-mask text-[14vw] tracking-tight sm:text-[11vw] lg:text-[9.5vw] ${
+            isThai
+              ? "font-light leading-[1.12]"
+              : "font-display font-medium leading-[0.95]"
+          }`}
         >
-          <span className="px-4 py-2 rounded-full text-primary text-sm font-medium tracking-wide mb-4 inline-block">
-            {t("hero.badge")}
-          </span>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mt-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B98B91] to-orange-300">
-              {t("hero.name")}
+          {nameWords.map((word, i) => (
+            <span key={i} className="word mr-[0.22em] last:mr-0">
+              <span
+                style={{
+                  transitionDelay: `${i * WORD_STAGGER_MS + WORD_LEAD_IN_MS}ms`,
+                }}
+              >
+                {word}
+              </span>
             </span>
-          </h1>
-          <p className="mt-6 mb-8 text-xl text-muted-foreground max-w-2xl mx-auto font-light">
-            <span className="font-medium text-foreground/90">{t("hero.role")}</span>
-          </p>
+          ))}
+        </h1>
 
-          <p className="mt-3 mb-8 text-xl text-muted-foreground max-w-2xl mx-auto font-light">
-            {t("hero.description")}
-          </p>
-        </m.div>
-
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="flex items-center gap-4"
+        <p
+          className="reveal font-display mt-4 text-2xl italic tracking-tight text-foreground md:text-4xl"
+          style={{ transitionDelay: "240ms" }}
         >
-          <Button asChild size="lg" className="rounded-2xl">
-            <Link href={path("/projects")}>
-              {t("hero.viewProjects")} <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg" className="rounded-2xl">
-            <Link href={path("/contact")}>{t("hero.contactMe")}</Link>
-          </Button>
-        </m.div>
+          {t("hero.role")}
+        </p>
 
-        <m.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.4 }}
-          className="mt-8 pt-6 border-t border-border/40"
+        <p
+          className="reveal mt-6 max-w-xl text-lg font-light text-muted-foreground"
+          style={{ transitionDelay: "320ms" }}
         >
-          <p className="text-sm text-muted-foreground mb-2">{t("hero.aiTeamLabel")}</p>
-          <Link href={path("/ai-team")} className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
-            {t("hero.aiTeamCta")}
-            <ArrowRight className="h-3.5 w-3.5" />
+          {t("hero.description")}
+        </p>
+
+        <div
+          className="reveal mt-10 flex flex-wrap items-center gap-4"
+          style={{ transitionDelay: "400ms" }}
+        >
+          <Link
+            href={path("/projects")}
+            className={`inline-flex items-center gap-3 bg-foreground px-8 py-4 text-background transition-opacity duration-700 hover:opacity-80 ${ctaLabel}`}
+          >
+            {t("hero.viewProjects")}
+            <ArrowRight className="h-4 w-4" />
           </Link>
-        </m.div>
-      </section>
-    </div>
+          <Link
+            href={path("/contact")}
+            className={`inline-flex items-center gap-3 border border-foreground/25 px-8 py-4 transition-colors duration-700 hover:border-foreground ${ctaLabel}`}
+          >
+            {t("hero.contactMe")}
+          </Link>
+        </div>
+
+        <p
+          className="reveal mt-8 flex flex-wrap items-center gap-2 text-sm font-light text-muted-foreground"
+          style={{ transitionDelay: "480ms" }}
+        >
+          {t("hero.aiTeamLabel")} ·
+          <Link
+            href={path("/ai-team")}
+            className="btn-line inline-flex items-center gap-1 text-foreground"
+          >
+            {t("hero.aiTeamCta")}
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </Link>
+        </p>
+      </div>
+    </section>
   );
 }
