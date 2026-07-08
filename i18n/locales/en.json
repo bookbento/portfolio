@@ -98,7 +98,18 @@
   },
   "projects": {
     "title": "Selected Work",
-    "subtitle": "A collection of projects I've worked on. From web applications to open-source contributions."
+    "subtitle": "Production platforms, personal builds, and open-source work — an index of software designed, built, and shipped end to end.",
+    "indexLabel": "Index",
+    "countLabel": "{{count}} Projects",
+    "types": {
+      "production": "Production",
+      "personal": "Personal",
+      "academic": "Academic",
+      "opensource": "Open Source"
+    },
+    "internal": "Internal — proprietary system",
+    "ctaEyebrow": "Next",
+    "ctaTitle": "Have a project in mind? Let's talk."
   },
   "projectCard": {
     "code": "Code",
