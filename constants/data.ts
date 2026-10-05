@@ -2,6 +2,26 @@ import { Project } from '@/types';
 
 export const projects: Project[] = [
   {
+    id: '8',
+    title: 'Malin Market',
+    description: 'A stall-rental platform for a 406-stall, 12-zone market in front of Chiang Mai University — vendors browse an interactive market map, check live availability, and request a stall in a few steps, while the team manages tenants and bookings from one admin system. Built end to end as a solo engineer, owning both development and infrastructure — from a pnpm monorepo of a Next.js frontend, a NestJS API with LINE Login, and a shared Prisma data layer, to a containerized stack on AWS EC2: Docker Compose services behind a Caddy reverse proxy, PostgreSQL 16 persisted on a Docker volume, and a GitHub Actions pipeline that gates every release on Playwright E2E tests, pushes images to GitHub Container Registry, and deploys over SSH, all fronted by Cloudflare. The timeline was cut from 25 days to 14 as the launch date kept moving up, and the platform still shipped to production on schedule.',
+    type: 'production',
+    image: '/assets/malinmarket.png',
+    techStack: ['Next.js', 'NestJS', 'TypeScript', 'Tailwind', 'Prisma', 'PostgreSQL', 'Docker', 'Caddy', 'AWS EC2', 'GitHub Actions', 'Playwright', 'Cloudflare', 'LINE Login'],
+    githubUrl: undefined,
+    liveUrl: 'https://malinmarket.com/',
+  },
+  {
+    id: '9',
+    title: 'Nippon Store',
+    description: 'A promotional landing page for Nippon Store, a Japanese-owned shop in Chiang Mai importing authentic snacks, drinks, and groceries from Japan. Built to give the shop a real online presence — a trilingual Thai / English / Japanese site that showcases products by category and sends customers straight to the Shopee storefront and Facebook page.',
+    type: 'production',
+    image: '/assets/nippon.png',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind', 'i18n', 'Vercel'],
+    githubUrl: undefined,
+    liveUrl: 'https://nippon-five.vercel.app/',
+  },
+  {
     id: '6',
     title: 'Hylife IT Asset Management',
     description: 'An internal IT asset management system built for Hylife, covering the full lifecycle of company hardware and equipment — registration, assignment, tracking, and maintenance history — through complete CRUD workflows. Built with Next.js on the frontend and NestJS with PostgreSQL on the backend, deployed on AWS EC2 behind Nginx with PM2 process management.',
@@ -70,6 +90,16 @@ export const projects: Project[] = [
     techStack: ['React', 'Tailwind'],
     githubUrl: 'https://github.com/bookbento/Check_in-out_TurnPro',
     liveUrl: undefined,
+  },
+  {
+    id: '10',
+    title: 'One Piece TCG Gacha',
+    description: 'A fan-made, free-to-play One Piece Card Game pull cabinet built out of personal passion to play with friends — everyone draws from the same shared cabinet, and the latest pulls show up for the whole group live. No real money involved, just the fun of opening packs together. Around 10 friends have already played it for real.',
+    type: 'personal',
+    image: '/assets/tcgonepiece.png',
+    techStack: ['TypeScript', 'Supabase', 'Vercel'],
+    githubUrl: undefined,
+    liveUrl: 'https://tcgonepiece.vercel.app/',
   },
 
 ];
